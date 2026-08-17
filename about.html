@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About - CREATIVE_OS_V1.0</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&family=Inter:wght@400&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+
+<script src="assets/js/tailwind-config.js"></script>
+<link href="assets/css/global.css" rel="stylesheet"/>
+</head>
+<body data-page="about" class="bg-surface text-on-surface min-h-screen flex flex-col relative font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+
+
+
+
+
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center pt-[64px] pb-[64px] relative z-10 w-full">
+<div class="w-full min-h-[calc(100vh-128px)] flex flex-col lg:flex-row relative">
+<!-- Left Column -->
+<div class="w-full lg:w-1/2 bg-primary flex flex-col justify-center items-center p-8 lg:p-16 relative overflow-visible">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary-container rounded-full mix-blend-overlay opacity-30 blur-3xl"></div>
+<div class="absolute bottom-10 right-10 w-48 h-48 bg-inverse-primary rounded-full mix-blend-overlay opacity-20 blur-2xl"></div>
+<div class="relative w-full max-w-[400px] mt-12 z-10">
+<div class="absolute inset-0 bg-secondary-container transform translate-x-4 translate-y-4 rounded-[2rem] border-2 border-outline block-shadow"></div>
+<div class="relative bg-surface-container-lowest rounded-[2rem] overflow-hidden border-2 border-outline block-shadow-hover transition-all group aspect-[3/4] p-4">
+<div class="w-full h-full rounded-xl overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-xl" alt="Stylized portrait" src="assets/images/about_profile.png"/>
+</div>
+</div>
+<div class="absolute -top-4 right-8 bg-surface-container-lowest text-primary font-label-md text-label-md px-6 py-2 border-2 border-outline rounded-full block-shadow z-20 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">star</span>
+            v1.0
+        </div>
+<div class="absolute -bottom-4 -left-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md px-6 py-2 border-2 border-outline rounded-full block-shadow z-20 font-bold tracking-wider">
+            EST. 2026
+        </div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="w-full lg:w-1/2 bg-surface-container-low flex flex-col justify-center p-8 lg:p-16 xl:p-24 relative overflow-visible text-on-surface">
+<div class="absolute top-20 right-[-100px] font-display text-[200px] font-bold text-primary opacity-5 leading-none select-none">AA</div>
+<div class="relative z-10 flex flex-col gap-6 w-full max-w-2xl mx-auto">
+<div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container font-label-md text-label-md px-6 py-2 uppercase tracking-wider w-max font-bold block-shadow-hover transition-all cursor-default border-2 border-outline rounded-full">
+<div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            STATUS: ONLINE
+        </div>
+<h1 class="relative font-headline-lg text-display-lg-mobile md:text-display-lg mb-2 font-black tracking-tighter uppercase leading-[0.9] text-on-surface">
+            ANUSHA<br/>ANAND
+        </h1>
+<h2 class="font-headline-md text-headline-md font-bold tracking-tight bg-primary text-on-primary inline-block px-6 py-3 border-2 border-outline rounded-full shadow-md mb-4 w-fit">
+            CS Student & Project Admin
+        </h2>
+<div class="bg-surface-container-lowest p-8 border-2 border-outline rounded-[2rem] shadow-xl relative">
+<span class="absolute -top-3 -left-3 bg-secondary-container text-primary w-10 h-10 flex items-center justify-center border-2 border-outline rounded-full material-symbols-outlined">format_quote</span>
+<p class="font-body-lg text-body-lg text-on-surface mb-0 leading-relaxed font-semibold">
+                CS student at BMSIT&M with a passion for Open Source, AI, and building impactful digital solutions. Experienced Project Admin for GirlScript Summer of Code and Technical Associate at OSCode. Building high-performance digital environments.
+            </p>
+</div>
+<div class="flex flex-col gap-4 mt-4 w-full">
+<h3 class="font-headline-md text-headline-md font-bold uppercase tracking-tight text-on-surface px-2">Contact Me</h3>
+<form class="flex flex-col gap-3 w-full" onsubmit="sendEmail(event)">
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-2 border-outline rounded-full px-6 py-3 font-label-md text-label-md opacity-60 cursor-not-allowed" value="To: anushaanand1543@gmail.com" type="text" readonly/>
+</div>
+<div class="relative">
+<input id="contact-subject" class="w-full bg-surface-container-lowest border-2 border-outline rounded-full px-6 py-3 font-label-md text-label-md focus:outline-none focus:border-primary transition-colors" placeholder="Subject" type="text" required/>
+</div>
+
+<div class="relative">
+<textarea id="contact-message" class="w-full bg-surface-container-lowest border-2 border-outline rounded-[2rem] px-6 py-4 font-label-md text-label-md focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Message" rows="3" required></textarea>
+</div>
+<button class="bg-secondary-container text-on-secondary-container font-label-xl text-label-xl tracking-widest px-8 py-4 rounded-full shadow-lg block-shadow-hover transition-all font-black border-2 border-outline flex items-center justify-center gap-3 group w-fit" type="submit">
+            Send Message
+            <span class="material-symbols-outlined transform group-hover:translate-x-2 transition-transform">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+
+<script src="assets/js/global.js"></script>
+<script>
+function sendEmail(event) {
+    event.preventDefault();
+    const subject = document.getElementById('contact-subject').value;
+    const message = document.getElementById('contact-message').value;
+    
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(message);
+    
+    // Use Gmail's web compose URL instead of mailto: to ensure it opens directly in browser
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=anushaanand1543@gmail.com&su=${encodedSubject}&body=${encodedBody}`;
+    window.open(gmailUrl, '_blank');
+}
+</script>
+</body>
+</html>

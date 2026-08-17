@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Projects - Creative OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&family=Inter:wght@400&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+
+<!-- Global Shared Assets -->
+<script src="assets/js/tailwind-config.js"></script>
+<link href="assets/css/global.css" rel="stylesheet"/>
+
+<style>
+    /* View Toggle Styles */
+    #projects-container[data-view="list"] {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    #projects-container[data-view="list"] .project-card {
+        flex-direction: row;
+        align-items: center;
+        padding: 16px 24px;
+        gap: 24px;
+        border-radius: 1.5rem;
+    }
+    
+    #projects-container[data-view="list"] .project-card .card-icon-container {
+        margin-bottom: 0;
+        width: 180px;
+        flex-shrink: 0;
+    }
+    
+    #projects-container[data-view="list"] .project-card .card-content {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        align-items: center;
+        gap: 24px;
+    }
+    
+    #projects-container[data-view="list"] .project-card .card-title-group {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 0 !important;
+    }
+    
+    #projects-container[data-view="list"] .project-card .card-description {
+        display: none;
+    }
+    
+    #projects-container[data-view="list"] .project-card .card-tags {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+        flex: 1;
+        justify-content: flex-end;
+    }
+    
+    /* Active Button States */
+    .view-btn.active {
+        background-color: var(--color-secondary-container, #eedcff);
+        color: var(--color-on-secondary-container, #2e2040);
+        border-color: var(--color-outline, #907898);
+    }
+</style>
+</head>
+<body data-page="projects" class="bg-surface text-on-surface min-h-screen flex flex-col relative font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col pt-[64px] pb-[64px] items-center px-margin-mobile md:px-margin-desktop w-full relative z-10 min-h-[calc(100vh-64px)]">
+    
+    <!-- Retro-Modern Window Container -->
+    <div class="w-full max-w-7xl bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.3)] border-2 border-outline-variant mt-12 relative flex flex-col h-full min-h-[80vh]">
+        
+        <!-- Window Title Bar -->
+        <div class="w-full h-16 bg-on-surface border-b-2 border-outline-variant flex items-center px-8 gap-2 shrink-0 relative rounded-t-[2rem]">
+            <div class="flex gap-2 z-10">
+                <div class="w-4 h-4 rounded-full bg-error border-2 border-error/50"></div>
+                <div class="w-4 h-4 rounded-full bg-secondary-container border-2 border-secondary-container/50"></div>
+                <div class="w-4 h-4 rounded-full bg-primary border-2 border-primary/50"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            
+
+
+                <div class="text-center font-label-xl text-label-xl text-surface-container-lowest font-bold tracking-[0.2em] uppercase">PROJECTS.EXE</div>
+            </div>
+        </div>
+        
+        <!-- Directory Toolbar -->
+        <div class="bg-surface-container-lowest px-8 py-4 border-b-2 border-outline flex flex-wrap gap-4 justify-between items-center shrink-0">
+            <div class="flex items-center gap-4">
+                <button id="btn-grid" onclick="setView('grid')" class="view-btn active text-on-surface-variant hover:bg-surface-variant transition-colors flex items-center gap-2 font-label-md text-label-md px-4 py-2 border-2 border-transparent rounded-full font-bold">
+                    <span class="material-symbols-outlined text-[18px]">view_module</span> Grid
+                </button>
+                <button id="btn-list" onclick="setView('list')" class="view-btn text-on-surface-variant hover:bg-surface-variant transition-colors flex items-center gap-2 font-label-md text-label-md px-4 py-2 border-2 border-transparent rounded-full font-bold">
+                    <span class="material-symbols-outlined text-[18px]">view_list</span> List
+                </button>
+            </div>
+            <div class="text-on-surface-variant font-label-md text-label-md font-bold uppercase bg-surface-variant px-4 py-2 rounded-full border-2 border-outline-variant">
+                6 Items | Creative Portfolio
+            </div>
+        </div>
+        
+        <!-- Window Content -->
+        <div class="p-8 md:p-12 relative z-10 overflow-y-auto flex-grow flex flex-col bg-surface-container-high rounded-b-[2rem]">
+            
+            <!-- Content Area - Grid/List Container -->
+            <div id="projects-container" data-view="grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 pb-12 lg:pb-0 items-stretch">
+                
+                <!-- Project: DoVER -->
+                <a href="project-dover.html" class="project-card group relative bg-surface-container-lowest border-2 border-outline rounded-[2rem] p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div class="flex justify-between items-center w-full card-icon-container mb-6">
+                        <div class="transition-colors shrink-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-[32px]">security</span>
+                        </div>
+                        <span class="font-label-md text-[14px] text-primary uppercase tracking-wider font-bold shrink-0">Project 01</span>
+                    </div>
+                    
+                    <div class="card-content flex flex-col flex-grow">
+                        <div class="card-title-group flex flex-col mb-3">
+                            <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors uppercase font-black leading-tight">DoVER</h3>
+                            <span class="text-primary font-bold uppercase font-label-md">Vault &amp; Evidence Registry</span>
+                        </div>
+                        <p class="card-description font-body-md text-body-md text-on-surface-variant font-medium">
+                            Secure blockchain-anchored platform to combat document forgery using AI forensics, cryptographic trust, and decentralized verification on Polygon L2.
+                        </p>
+                        <div class="card-tags mt-auto pt-6 border-t-2 border-outline-variant flex flex-wrap gap-2 w-full">
+                            <span class="bg-primary text-on-primary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Node.js</span>
+                            <span class="bg-primary text-on-primary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Vertex AI</span>
+                            <span class="bg-primary text-on-primary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Polygon L2</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 02 Card -->
+                <a href="project-ghewarkegeeks.html" class="project-card group relative bg-surface-container-lowest border-2 border-outline rounded-[3rem] p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full w-full">
+                    <div class="flex justify-between items-center w-full card-icon-container mb-6">
+                        <div class="transition-colors shrink-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-on-secondary-container text-[32px]">extension</span>
+                        </div>
+                        <span class="font-label-md text-[14px] text-primary uppercase tracking-wider font-bold shrink-0">Project 02</span>
+                    </div>
+                    <div class="card-content flex flex-col flex-grow">
+                        <div class="card-title-group flex flex-col mb-3">
+                            <h3 class="font-headline-md text-[24px] md:text-headline-md text-on-surface group-hover:text-on-secondary-container transition-colors uppercase font-black leading-tight">Ghewarkegeeks</h3>
+                            <p class="font-label-md text-[12px] text-on-secondary-container uppercase font-bold tracking-widest mt-1">LLM Safety Extension</p>
+                        </div>
+                        <p class="card-description font-body-md text-[14px] md:text-body-md text-on-surface-variant font-medium flex-grow w-full line-clamp-3">
+                            Privacy-first browser extension detecting unsafe text before submission to LLMs to prevent policy violations.
+                        </p>
+                        <div class="card-tags mt-auto pt-6 border-t-2 border-outline-variant flex flex-wrap gap-2 w-full">
+                            <span class="bg-secondary-container text-on-secondary-container border-2 border-outline font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full">Browser Ext</span>
+                            <span class="bg-secondary-container text-on-secondary-container border-2 border-outline font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full">ONNX</span>
+                            <span class="bg-secondary-container text-on-secondary-container border-2 border-outline font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full">NLP</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Project 03 Card -->
+                <a href="project-legalease.html" class="project-card group relative bg-surface-container-lowest border-2 border-outline rounded-[3rem] p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full w-full">
+                    <div class="flex justify-between items-center w-full card-icon-container mb-6">
+                        <div class="transition-colors shrink-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-tertiary text-[32px]">gavel</span>
+                        </div>
+                        <span class="font-label-md text-[14px] text-primary uppercase tracking-wider font-bold shrink-0">Project 03</span>
+                    </div>
+                    <div class="card-content flex flex-col flex-grow">
+                        <div class="card-title-group flex flex-col mb-3">
+                            <h3 class="font-headline-md text-[24px] md:text-headline-md text-on-surface group-hover:text-tertiary transition-colors uppercase font-black leading-tight">LegalEase AI</h3>
+                            <p class="font-label-md text-[12px] text-tertiary uppercase font-bold tracking-widest mt-1">Intelligent Legal Assistant</p>
+                        </div>
+                        <p class="card-description font-body-md text-[14px] md:text-body-md text-on-surface-variant font-medium flex-grow w-full line-clamp-3">
+                            AI-powered assistant clarifying dense legal language, detecting loopholes, and providing comparative analysis.
+                        </p>
+                        <div class="card-tags mt-auto pt-6 border-t-2 border-outline-variant flex flex-wrap gap-2 w-full">
+                            <span class="bg-tertiary text-on-tertiary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Python</span>
+                            <span class="bg-tertiary text-on-tertiary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">NLP</span>
+                            <span class="bg-tertiary text-on-tertiary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Flask</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Project 04 Card - Trekking App -->
+                <a href="project-trekking.html" class="project-card group relative bg-surface-container-lowest border-2 border-outline rounded-[3rem] p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full w-full">
+                    <div class="flex justify-between items-center w-full card-icon-container mb-6">
+                        <div class="transition-colors shrink-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-[32px]">hiking</span>
+                        </div>
+                        <span class="font-label-md text-[14px] text-primary uppercase tracking-wider font-bold shrink-0">Project 04</span>
+                    </div>
+                    <div class="card-content flex flex-col flex-grow">
+                        <div class="card-title-group flex flex-col mb-3">
+                            <h3 class="font-headline-md text-[24px] md:text-headline-md text-on-surface group-hover:text-primary transition-colors uppercase font-black leading-tight">Trekking App</h3>
+                            <p class="font-label-md text-[12px] text-primary uppercase font-bold tracking-widest mt-1">Management System</p>
+                        </div>
+                        <p class="card-description font-body-md text-[14px] md:text-body-md text-on-surface-variant font-medium flex-grow w-full line-clamp-3">
+                            Centralized platform for trekking agencies to streamline packages, staff assignment, and user bookings with a dynamic analytics dashboard.
+                        </p>
+                        <div class="card-tags mt-auto pt-6 border-t-2 border-outline-variant flex flex-wrap gap-2 w-full">
+                            <span class="bg-primary text-on-primary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">SQLite</span>
+                            <span class="bg-primary text-on-primary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">SQLAlchemy</span>
+                            <span class="bg-primary text-on-primary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Chart.js</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 05 Card - JanMitra -->
+                <a href="project-janmitra.html" class="project-card group relative bg-surface-container-lowest border-2 border-outline rounded-[3rem] p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full w-full">
+                    <div class="flex justify-between items-center w-full card-icon-container mb-6">
+                        <div class="transition-colors shrink-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-on-secondary-container text-[32px]">account_balance</span>
+                        </div>
+                        <span class="font-label-md text-[14px] text-primary uppercase tracking-wider font-bold shrink-0">Project 05</span>
+                    </div>
+                    <div class="card-content flex flex-col flex-grow">
+                        <div class="card-title-group flex flex-col mb-3">
+                            <h3 class="font-headline-md text-[24px] md:text-headline-md text-on-surface group-hover:text-on-secondary-container transition-colors uppercase font-black leading-tight">JanMitra</h3>
+                            <p class="font-label-md text-[12px] text-on-secondary-container uppercase font-bold tracking-widest mt-1">Village Services Portal</p>
+                        </div>
+                        <p class="card-description font-body-md text-[14px] md:text-body-md text-on-surface-variant font-medium flex-grow w-full line-clamp-3">
+                            Full-stack digital governance platform improving accessibility to public services, certificate applications, and welfare schemes for rural citizens.
+                        </p>
+                        <div class="card-tags mt-auto pt-6 border-t-2 border-outline-variant flex flex-wrap gap-2 w-full">
+                            <span class="bg-secondary-container text-on-secondary-container border-2 border-outline font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full">React</span>
+                            <span class="bg-secondary-container text-on-secondary-container border-2 border-outline font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-secondary-container text-on-secondary-container border-2 border-outline font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 06 Card - GigB -->
+                <a href="project-gigb.html" class="project-card group relative bg-surface-container-lowest border-2 border-outline rounded-[3rem] p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full w-full">
+                    <div class="flex justify-between items-center w-full card-icon-container mb-6">
+                        <div class="transition-colors shrink-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-tertiary text-[32px]">handshake</span>
+                        </div>
+                        <span class="font-label-md text-[14px] text-primary uppercase tracking-wider font-bold shrink-0">Project 06</span>
+                    </div>
+                    <div class="card-content flex flex-col flex-grow">
+                        <div class="card-title-group flex flex-col mb-3">
+                            <h3 class="font-headline-md text-[24px] md:text-headline-md text-on-surface group-hover:text-tertiary transition-colors uppercase font-black leading-tight">GigB</h3>
+                            <p class="font-label-md text-[12px] text-tertiary uppercase font-bold tracking-widest mt-1">Neighborhood Gig Platform</p>
+                        </div>
+                        <p class="card-description font-body-md text-[14px] md:text-body-md text-on-surface-variant font-medium flex-grow w-full line-clamp-3">
+                            Modern gig-economy web application connecting locals for neighborhood tasks with real-time messaging and location-based discovery.
+                        </p>
+                        <div class="card-tags mt-auto pt-6 border-t-2 border-outline-variant flex flex-wrap gap-2 w-full">
+                            <span class="bg-tertiary text-on-tertiary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Supabase</span>
+                            <span class="bg-tertiary text-on-tertiary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Socket.io</span>
+                            <span class="bg-tertiary text-on-tertiary font-label-md text-[12px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Leaflet</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        
+        <!-- Window Status Bar -->
+        <div class="bg-surface-variant h-12 flex flex-wrap items-center px-8 border-t-2 border-outline font-label-md text-label-md text-on-surface-variant justify-between shrink-0 font-bold hidden sm:flex rounded-b-[2rem]">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">edit_document</span> Read/Write</span>
+                <span class="flex items-center gap-2 border-l-2 border-outline-variant pl-6"><span class="material-symbols-outlined text-[16px]">hard_drive</span> Local</span>
+            </div>
+            <div class="uppercase tracking-wider flex items-center gap-2 text-primary">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Status: ALL SYSTEMS NOMINAL
+            </div>
+        </div>
+        
+    </div>
+</main>
+
+<script>
+    function setView(viewMode) {
+        const container = document.getElementById('projects-container');
+        const btnGrid = document.getElementById('btn-grid');
+        const btnList = document.getElementById('btn-list');
+        
+        // Update container attribute
+        container.setAttribute('data-view', viewMode);
+        
+        // Update button states
+        if (viewMode === 'grid') {
+            btnGrid.classList.add('active', 'border-outline');
+            btnGrid.classList.remove('border-transparent');
+            btnList.classList.remove('active', 'border-outline');
+            btnList.classList.add('border-transparent');
+            
+            // Switch tailwind classes on container
+            container.className = 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 pb-12 lg:pb-0 items-stretch';
+        } else {
+            btnList.classList.add('active', 'border-outline');
+            btnList.classList.remove('border-transparent');
+            btnGrid.classList.remove('active', 'border-outline');
+            btnGrid.classList.add('border-transparent');
+            
+            // Switch tailwind classes on container for list view (CSS handles the actual flex row for cards)
+            container.className = 'flex flex-col gap-4 pb-12 lg:pb-0 items-stretch';
+        }
+    }
+</script>
+
+<!-- Global Functionality -->
+<script src="assets/js/global.js"></script>
+</body>
+</html>

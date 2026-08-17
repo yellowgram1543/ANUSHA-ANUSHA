@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JanMitra - Creative OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&family=Inter:wght@400&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+
+<!-- Global Shared Assets -->
+<script src="assets/js/tailwind-config.js"></script>
+<link href="assets/css/global.css" rel="stylesheet"/>
+</head>
+<body data-page="project-detail" class="bg-surface text-on-surface min-h-screen flex flex-col relative font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+
+<main class="flex-grow flex flex-col pt-[64px] pb-[64px] items-center px-margin-mobile md:px-margin-desktop w-full relative z-10 min-h-[calc(100vh-64px)]">
+    <div class="project-data-container hidden w-full">
+        <!-- Meta Data -->
+        <div id="project-meta" 
+             data-exe="JANMITRA.EXE" 
+             data-title="JanMitra" 
+             data-github="https://github.com/yellowgram1543/jamitra-portal" 
+             data-subtitle="Digital Village Services Portal" 
+             data-icon="account_balance" 
+             data-number="Project 05">
+        </div>
+        
+        <!-- Problem Content -->
+        <div id="project-problem">
+            <p>Built a full-stack digital governance platform designed to improve accessibility, transparency, and efficiency in public service delivery. Allows users to apply for certificates (Income, Caste, Birth, etc.), track applications via Aadhaar, discover welfare schemes, and report corruption issues.</p>
+        </div>
+
+        <!-- Features Content -->
+        <ul id="project-features">
+            <li>End-to-end certificate applications</li>
+            <li>Real-time application tracking</li>
+            <li>Personalized scheme recommendations</li>
+            <li>Secure document access and storage</li>
+            <li>Corruption reporting mechanism</li>
+        </ul>
+
+        <!-- Tech Content -->
+        <div id="project-tech">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+            <span>Vercel</span>
+        </div>
+    </div>
+</main>
+
+<script src="assets/js/global.js"></script>
+<script src="assets/js/project-shell.js"></script>
+</body>
+</html>

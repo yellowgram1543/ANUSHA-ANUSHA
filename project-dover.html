@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DoVER - Creative OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&family=Inter:wght@400&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+
+<!-- Global Shared Assets -->
+<script src="assets/js/tailwind-config.js"></script>
+<link href="assets/css/global.css" rel="stylesheet"/>
+</head>
+<body data-page="project-detail" class="bg-surface text-on-surface min-h-screen flex flex-col relative font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col pt-[64px] pb-[64px] items-center px-margin-mobile md:px-margin-desktop w-full relative z-10 min-h-[calc(100vh-64px)]">
+    
+    <!-- Simple Project Data Container -->
+    <div class="project-data-container hidden w-full">
+        <!-- Meta Data -->
+        <div id="project-meta" 
+             data-exe="DOVER.EXE" 
+             data-title="DoVER" 
+             data-github="https://github.com/yellowgram1543/DoVER" 
+             data-subtitle="Decentralized Official Vault &amp; Evidence Registry" 
+             data-icon="security" 
+             data-number="Project 01">
+        </div>
+        
+        <!-- Problem Content -->
+        <div id="project-problem">
+            <p>Developed a secure blockchain-anchored platform designed to combat document forgery and digital evidence tampering. It creates an immutable "Birth Record" for critical digital assets—such as academic certificates, legal records, ownership documents, and identity credentials—by combining AI forensics, cryptographic trust infrastructure, and decentralized verification.</p>
+        </div>
+
+        <!-- Features Content -->
+        <ul id="project-features">
+            <li>Secure backend with Bull Queue</li>
+            <li>Vertex AI (Gemini Flash) forensic auditing</li>
+            <li>3-tier PKI certificate authority hierarchy</li>
+            <li>Blockchain proof-of-existence anchoring on Polygon L2</li>
+            <li>OCR + AI vision validation</li>
+            <li>HMAC-SHA256 APIs &amp; Tailwind CSS glassmorphism UI</li>
+        </ul>
+
+        <!-- Tech Content -->
+        <div id="project-tech">
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>MongoDB Atlas</span>
+            <span>Redis</span>
+            <span>Ethers.js</span>
+            <span>Google Vertex AI</span>
+            <span>Tailwind CSS</span>
+        </div>
+    </div>
+
+</main>
+
+<!-- Global Functionality & Project Shell Loader -->
+<script src="assets/js/global.js"></script>
+<script src="assets/js/project-shell.js"></script>
+</body>
+</html>

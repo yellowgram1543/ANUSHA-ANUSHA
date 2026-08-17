@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trekking App - Creative OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&family=Inter:wght@400&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+
+<!-- Global Shared Assets -->
+<script src="assets/js/tailwind-config.js"></script>
+<link href="assets/css/global.css" rel="stylesheet"/>
+</head>
+<body data-page="project-detail" class="bg-surface text-on-surface min-h-screen flex flex-col relative font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+
+<main class="flex-grow flex flex-col pt-[64px] pb-[64px] items-center px-margin-mobile md:px-margin-desktop w-full relative z-10 min-h-[calc(100vh-64px)]">
+    <div class="project-data-container hidden w-full">
+        <!-- Meta Data -->
+        <div id="project-meta" 
+             data-exe="TREKKING.EXE" 
+             data-title="Trekking System" 
+             data-github="https://github.com/yellowgram1543/TREKKING-APP" 
+             data-subtitle="Centralized Web-based Platform for Trekking Agencies" 
+             data-icon="hiking" 
+             data-number="Project 04">
+        </div>
+        
+        <!-- Problem Content -->
+        <div id="project-problem">
+            <p>Developed a comprehensive management portal to streamline trekking packages, assign staff, and enable secure user bookings. Features include an admin dashboard with dynamic Chart.js statistics, role-based access for staff to manage trip statuses, and a secure user booking workflow with safety data capturing.</p>
+        </div>
+
+        <!-- Features Content -->
+        <ul id="project-features">
+            <li>Admin statistics dashboard with dynamic charts</li>
+            <li>Role-based access controls for staff</li>
+            <li>Role-based user portals</li>
+            <li>Automated booking validation flow</li>
+            <li>Safety data capturing workflow</li>
+        </ul>
+
+        <!-- Tech Content -->
+        <div id="project-tech">
+            <span>SQLite</span>
+            <span>SQLAlchemy</span>
+            <span>Python</span>
+            <span>Chart.js</span>
+        </div>
+    </div>
+</main>
+
+<script src="assets/js/global.js"></script>
+<script src="assets/js/project-shell.js"></script>
+</body>
+</html>

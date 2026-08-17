@@ -1,0 +1,901 @@
+:root {
+  --cat-color: #aa9eaa;
+  /* Change this hex code to change the cat's body color globally! */
+}
+
+/* Folder and specific component styles */
+.folder-icon {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.folder-icon:hover {
+  transform: translateY(-4px) scale(1.05);
+  filter: drop-shadow(0px 8px 0px rgba(0, 0, 0, 0.1));
+}
+
+.folder-shadow {
+  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.1));
+}
+
+.block-shadow {
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.block-shadow-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Cursor Style */
+* {
+  cursor: none !important;
+}
+
+#custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-12px, -4px);
+  transition: transform 0.1s ease-out;
+}
+
+.desktop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 32px;
+  padding: 32px;
+}
+
+:root {
+  --scor-black: #9a4c32;
+  --scor-white: #fff;
+  --scor-primary-color: #f26d40;
+  --scor-primary-color-dark: #ee4811;
+  --scor-primary-color-tint: #f79655;
+  --scor-accent-color: #fbe89d;
+  --scor-mouth-inner-color: #f5879b;
+  --scor-nose-color: #f5879b;
+  --scor-blush-color: #f5879b;
+  --scor-shadow-color: hsl(266, 21%, 95%);
+}
+
+.scor {
+  --ear-size: 9em;
+  position: relative;
+  padding-top: calc(var(--ear-size) + 2em);
+  padding-bottom: 3em;
+}
+
+.scor::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 1.75em;
+  left: 50%;
+  height: 2em;
+  width: 50%;
+  transform: translateX(-50%);
+  border-radius: 100%;
+  background-color: var(--scor-primary-color);
+  opacity: 0.2;
+}
+
+.scor-eye {
+  border-radius: 50% 55%/50% 45%;
+  --eye-position-x: 2em;
+  position: absolute;
+  z-index: 2;
+  top: 4.75em;
+  height: 1.875em;
+  width: 1.75em;
+  background-color: var(--scor-black);
+  transform-origin: center 70%;
+  overflow: hidden;
+  animation: blinky 7s infinite;
+}
+
+.scor-eye::before,
+.scor-eye::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 100%;
+}
+
+.scor-eye::before {
+  top: 0.125em;
+  height: 40%;
+  width: 40%;
+  background-color: var(--scor-white);
+}
+
+.scor-eye::after {
+  bottom: -0.125em;
+  height: 40%;
+  width: 70%;
+  background-color: var(--scor-primary-color);
+}
+
+.scor-eye-left {
+  left: var(--eye-position-x);
+}
+
+.scor-eye-right {
+  right: var(--eye-position-x);
+}
+
+.scor-nose {
+  position: relative;
+  z-index: 5;
+  top: 0;
+  height: 1em;
+  width: 1em;
+}
+
+.scor-nose::before,
+.scor-nose::after {
+  content: "";
+}
+
+.scor-nose::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+  border-top-left-radius: 80%;
+  border-top-right-radius: 0.1875em;
+  border-bottom-left-radius: 0.1875em;
+  border-bottom-right-radius: 0.25em;
+  background-color: var(--scor-nose-color);
+}
+
+.scor-nose::after {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 0.5em);
+  transform: translateX(-50%);
+  height: 2.25em;
+  width: 3.5em;
+  border-radius: 0.5em;
+  background-color: var(--scor-accent-color);
+}
+
+.scor-mouth {
+  position: absolute;
+  bottom: -1.125em;
+  left: 50%;
+  height: 0.325em;
+  width: 2.5em;
+  transform: translateX(-50%) translateY(var(--mouth-translate, 0));
+  transition: var(--mouth-transition, 0.2s) ease-in-out;
+}
+
+.scor-mouth-line {
+  position: absolute;
+  z-index: 4;
+  left: calc(50% - 0.0625em);
+  top: 100%;
+  height: 1em;
+  width: 0.125em;
+  background-color: var(--scor-black);
+}
+
+.scor-mouth-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.scor-mouth-outer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 200%;
+  width: calc(100% - 0.25em);
+  border-radius: 100%;
+  border: 0.125em solid var(--scor-black);
+  background-color: var(--scor-white);
+}
+
+.scor-mouth-inner {
+  position: absolute;
+  z-index: 1;
+  left: 2%;
+  height: 1.25em;
+  width: 96%;
+  transform-origin: center top;
+  transform: scaleY(var(--mouth-scale, 0));
+  border-top-left-radius: 1px 10%;
+  border-top-right-radius: 1px 10%;
+  border-bottom-left-radius: 50% 90%;
+  border-bottom-right-radius: 50% 90%;
+  background-color: var(--scor-black);
+  overflow: hidden;
+  transition: var(--mouth-transition, 0.2s) ease-in-out;
+}
+
+.scor-mouth-inner::before,
+.scor-mouth-inner::after {
+  content: "";
+  position: absolute;
+}
+
+.scor-mouth-inner::before {
+  top: 0;
+  left: 50%;
+  height: 0.6875em;
+  width: 35%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background-color: var(--scor-white);
+}
+
+.scor-mouth-inner::after {
+  bottom: -0.125em;
+  right: 0.125em;
+  height: 0.625em;
+  width: 1.5em;
+  transform: rotate(-10deg);
+  border-radius: 100%;
+  background-color: var(--scor-mouth-inner-color);
+}
+
+.scor-blush {
+  --blush-position-x: 1em;
+  position: absolute;
+  z-index: 1;
+  top: 6.25em;
+  height: 1em;
+  width: 1.75em;
+  border-radius: 100%;
+  background-color: var(--scor-blush-color);
+  transform: rotate(var(--blush-rotate));
+  opacity: 0.3;
+}
+
+.scor-blush-left {
+  --blush-rotate: 5deg;
+  left: var(--blush-position-x);
+}
+
+.scor-blush-right {
+  --blush-rotate: -5deg;
+  right: var(--blush-position-x);
+}
+
+.scor-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50% 60%/50% 40%;
+  z-index: 2;
+  background-color: var(--scor-white);
+}
+
+.scor-face-lower {
+  position: absolute;
+  z-index: 2;
+  top: 6em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scor-face-fluff {
+  --fluff-position-x: 2.5em;
+  position: absolute;
+  top: 7em;
+  height: 4.25em;
+  width: 4.25em;
+}
+
+.scor-face-fluff::before,
+.scor-face-fluff::after {
+  content: "";
+  transform-origin: right top;
+  border-top-left-radius: 90%;
+  border-bottom-right-radius: 90%;
+  border-bottom-left-radius: 0.125em;
+  border-top-right-radius: 0.125em;
+  background-color: var(--scor-white);
+}
+
+.scor-face-fluff::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(60deg);
+}
+
+.scor-face-fluff::after {
+  position: absolute;
+  left: 0.5em;
+  top: -1.5em;
+  height: 3.5em;
+  width: 3.5em;
+  transform: rotate(80deg);
+}
+
+.scor-face-fluff-left {
+  right: calc(100% - var(--fluff-position-x));
+}
+
+.scor-face-fluff-right {
+  transform: rotateY(180deg);
+  left: calc(100% - var(--fluff-position-x));
+}
+
+.scor-ear {
+  background-color: var(--scor-white);
+  background: linear-gradient(var(--ear-gradient-rotate), var(--scor-primary-color) 30%, var(--scor-primary-color-tint) 30%, var(--scor-primary-color-tint) 40%, var(--scor-white) 40%);
+  overflow: hidden;
+}
+
+.scor-ear,
+.scor-ear-right-wrap {
+  position: absolute;
+  z-index: 1;
+  top: 3.5em;
+  height: var(--ear-size);
+  width: var(--ear-size);
+  transform-origin: var(--ear-transform-origin);
+  transform: rotate(var(--ear-rotate));
+  animation: rotateThing 2s ease-in-out infinite alternate;
+}
+
+.scor-ear-right-wrap {
+  --ear-gradient-rotate: -40deg;
+  --ear-rotate: -120deg;
+  --keyframe-rotate-to: -115deg;
+  --ear-transform-origin: left top;
+  --ear-position-shadow-right: 6em;
+  right: -4em;
+}
+
+.scor-ear-right-wrap>.scor-ear {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: none;
+}
+
+.scor-ear::before,
+.scor-ear::after {
+  content: "";
+  position: absolute;
+}
+
+.scor-ear::before {
+  top: 2.5em;
+  left: 50%;
+  height: 4em;
+  width: 4em;
+  transform: translateX(-50%);
+  border-radius: inherit;
+  background-color: var(--scor-accent-color);
+}
+
+.scor-ear::after {
+  top: 1.625em;
+  left: var(--ear-position-shadow-left, auto);
+  right: var(--ear-position-shadow-right, auto);
+  height: 2em;
+  width: 4em;
+  transform: rotate(var(--ear-gradient-rotate));
+  border-radius: 100%;
+  background-color: var(--scor-shadow-color);
+  mix-blend-mode: multiply;
+}
+
+.scor-ear-left {
+  --ear-gradient-rotate: 40deg;
+  --ear-rotate: 120deg;
+  --keyframe-rotate-to: 115deg;
+  --ear-transform-origin: right top;
+  --ear-position-shadow-left: 6em;
+  left: -4em;
+  border-top-left-radius: 90%;
+  border-bottom-right-radius: 90%;
+  border-bottom-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+.scor-ear-right {
+  animation: none;
+}
+
+.scor-ear-right,
+.scor-ear-right-fluff {
+  border-top-right-radius: 90%;
+  border-bottom-left-radius: 90%;
+  border-bottom-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+.scor-ear-right-fluff {
+  position: absolute;
+  top: 2.5em;
+  left: 1em;
+  height: 3.5em;
+  width: 2em;
+  transform-origin: inherit;
+  transform: rotate(25deg);
+  border-bottom-right-radius: 0.25em;
+  background-color: var(--scor-white);
+}
+
+.scor-head {
+  position: relative;
+  z-index: 5;
+  height: 10.5em;
+  width: 12em;
+  transform-origin: center 8em;
+  transform: var(--head-transform, none);
+  transition: 0.7s cubic-bezier(0.3, 0, 0.3, 1);
+}
+
+.scor-neck {
+  position: absolute;
+  z-index: 5;
+  top: 1.25em;
+  height: 1em;
+  width: 100%;
+}
+
+.scor-neck::before,
+.scor-neck::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 2.25em;
+  border-top-left-radius: 30% 50%;
+  border-bottom-left-radius: 30% 50%;
+  border-top-right-radius: 60% 50%;
+  border-bottom-right-radius: 60% 50%;
+  background-color: var(--scor-primary-color);
+}
+
+.scor-neck::before {
+  left: 0.25em;
+  transform: rotate(20deg);
+}
+
+.scor-neck::after {
+  right: 0.25em;
+  transform: rotateY(180deg) rotate(20deg);
+}
+
+.scor-arm {
+  border-radius: 50% 70%/50% 25%;
+  position: absolute;
+  z-index: 3;
+  top: 2.25em;
+  height: 4.5em;
+  width: 2.5em;
+  transform-origin: 1.25em center;
+  background-color: var(--scor-white);
+  overflow: hidden;
+}
+
+.scor-arm::before,
+.scor-arm::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 0.75em;
+  width: 2px;
+  border-radius: 1px;
+  background-color: var(--scor-black);
+}
+
+.scor-arm::before {
+  left: 0.75em;
+}
+
+.scor-arm::after {
+  right: 0.75em;
+}
+
+.scor-arm-left {
+  left: -0.125em;
+  transform: rotate(-10deg);
+}
+
+.scor-arm-right {
+  right: -0.125em;
+  transform: rotate(10deg);
+}
+
+.scor-leg {
+  position: absolute;
+  z-index: 2;
+  bottom: -1em;
+  height: 2em;
+  width: 1.25em;
+  transform-origin: top center;
+  transform: rotate(var(--leg-rotate));
+  background-color: var(--scor-shadow-color);
+}
+
+.scor-leg-foot {
+  border-radius: 50% 30%/50% 60%;
+  position: absolute;
+  bottom: 0;
+  left: var(--foot-position-left, auto);
+  right: var(--foot-position-right, auto);
+  height: 6.5em;
+  width: 3em;
+  transform-origin: center bottom;
+  transform: rotate(var(--foot-rotate));
+  border-top-right-radius: var(--foot-radius-right, 50% 30%);
+  border-top-left-radius: var(--foot-radius-left, 50% 30%);
+  background-color: var(--scor-white);
+  background: linear-gradient(var(--foot-gradient-rotate), var(--scor-primary-color) 30%, var(--scor-white) 30%);
+  overflow: hidden;
+  perspective: 1000px;
+  animation: rotateThing 1s ease-in-out infinite alternate;
+}
+
+.scor-leg-foot::before,
+.scor-leg-foot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 1em;
+  width: 2px;
+  border-radius: 1px;
+  background-color: var(--scor-black);
+  transform-origin: center top;
+}
+
+.scor-leg-foot::before {
+  left: 1em;
+  transform: var(--foot-transform-before);
+}
+
+.scor-leg-foot::after {
+  right: 1em;
+  transform: var(--foot-transform-after);
+}
+
+.scor-leg-foot-pad {
+  position: absolute;
+  top: 3em;
+  left: var(--foot-pad-position-left, auto);
+  right: var(--foot-pad-position-right, auto);
+  height: 1.75em;
+  width: 2.5em;
+  transform: rotate(var(--foot-pad-rotate)) perspective(1em) rotateX(-7deg);
+  border-radius: 0.5em;
+  background-color: var(--scor-accent-color);
+}
+
+.scor-leg-left {
+  --foot-radius-right: 50% 20%;
+  --leg-rotate: 80deg;
+  --foot-position-left: 1em;
+  --foot-rotate: -110deg;
+  --keyframe-rotate-to: -120deg;
+  --foot-gradient-rotate: 175deg;
+  --foot-transform-before: rotate(-5deg) translateX(-0.25em);
+  --foot-transform-after: rotate(-5deg) translateX(-0.25em);
+  --foot-pad-rotate: -5deg;
+  --foot-pad-position-left: -0.25em;
+  right: calc(100% - 2.125em);
+}
+
+.scor-leg-right {
+  --foot-radius-left: 50% 20%;
+  --leg-rotate: -80deg;
+  --foot-position-right: 1em;
+  --foot-rotate: 110deg;
+  --keyframe-rotate-to: 120deg;
+  --foot-gradient-rotate: -175deg;
+  --foot-transform-before: rotate(5deg) translateX(0.25em);
+  --foot-transform-after: rotate(5deg) translateX(0.25em);
+  --foot-pad-rotate: 5deg;
+  --foot-pad-position-right: -0.25em;
+  left: calc(100% - 2.125em);
+}
+
+.scor-torso {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50% 70%/50% 30%;
+  background: var(--scor-shadow-color);
+  overflow: hidden;
+}
+
+.scor-torso::before,
+.scor-torso::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scor-torso::before {
+  top: 0;
+  height: 50%;
+  width: 100%;
+  background-color: var(--scor-white);
+}
+
+.scor-torso::after {
+  top: -0.75em;
+  width: 45%;
+  height: 90%;
+  border-radius: 100%;
+  background-color: var(--scor-white);
+}
+
+.scor-tail {
+  position: absolute;
+  left: -0.75em;
+  bottom: 0.75em;
+  height: 3em;
+  width: 3em;
+  border-radius: 100%;
+  background-color: var(--scor-shadow-color);
+}
+
+.scor-body {
+  position: relative;
+  left: 50%;
+  height: 6.5em;
+  width: 6em;
+  margin-top: -1.5em;
+  transform: translateX(-50%);
+}
+
+.scor-body::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0.5em;
+  left: 50%;
+  height: 2.25em;
+  width: 60%;
+  transform: var(--body-transform, translateX(-50%));
+  border-radius: 100%;
+  background-color: var(--scor-shadow-color);
+  transition: transform 0.7s cubic-bezier(0.3, 0, 0.3, 1);
+}
+
+.scor:hover {
+  --mouth-translate: -0.125em;
+  --mouth-scale: 1;
+  --mouth-transition: 0.2s 1s;
+  --body-transform: translateX(-40%) scaleX(1.1);
+  --head-transform: rotate(20deg);
+}
+
+@keyframes rotateThing {
+  100% {
+    transform: rotate(var(--keyframe-rotate-to));
+  }
+}
+
+@keyframes blinky {
+
+  0%,
+  9%,
+  11%,
+  19%,
+  21%,
+  69%,
+  71%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  10%,
+  20%,
+  70% {
+    transform: scaleY(0);
+  }
+}
+
+/*# sourceMappingURL=scorbunny.css.map */
+
+
+/* Cat Paw Hover Animation */
+.get-started-cat {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+}
+
+.get-started-cat__scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible !important;
+}
+
+.get-started-cat__scene--front {
+  z-index: 20;
+}
+
+.get-started-cat__reach {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.get-started-cat[data-reduced-motion="true"] .get-started-cat__reach,
+.get-started-cat[data-reduced-motion="true"] .get-started-cat__paw-front {
+  display: none;
+}
+
+.get-started-cat__when-bottom {
+  display: none;
+}
+
+.get-started-cat[data-zone="bottom"] .get-started-cat__when-side {
+  display: none;
+}
+
+.get-started-cat[data-zone="bottom"] .get-started-cat__when-bottom {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .get-started-cat__reach {
+    transition: none;
+  }
+}
+
+
+
+/* --- SLEEPING CAT START --- */
+.mouse-detector {
+  position: absolute;
+  top: -68px;
+  /* Rest the paws precisely on the top border of the box */
+  left: 50%;
+  transform: translateX(-110%);
+  z-index: 30;
+  /* Higher than h1 (z-10) so it drapes OVER the box */
+  pointer-events: none;
+  /* Let clicks pass through, but we can capture hover on container */
+}
+
+.mouse-detector .cat {
+  position: relative;
+  pointer-events: auto;
+  /* Catch hover on the cat itself */
+  padding: 10px;
+}
+
+.cat .sleep-symbol {
+  position: absolute;
+  left: 10px;
+  top: -5px;
+  font-weight: 600;
+  color: #000;
+  font-family: "Sour Gummy", sans-serif;
+  pointer-events: none;
+}
+
+.cat .sleep-symbol span {
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+  transform: scale(1);
+  animation: sleep 4s ease-in-out infinite;
+}
+
+.cat .sleep-symbol span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.cat .sleep-symbol span:nth-child(2) {
+  animation-delay: 1s;
+  margin-left: -5px;
+}
+
+.cat .sleep-symbol span:nth-child(3) {
+  animation-delay: 2s;
+  margin-left: -5px;
+}
+
+.cat .thecat {
+  z-index: 2;
+  position: relative;
+  pointer-events: none;
+  width: 150px;
+  /* Scale down the SVG slightly to fit nicely */
+}
+
+.cat .thecat svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+#tail {
+  visibility: visible;
+}
+
+#longtail {
+  display: none;
+  visibility: hidden;
+}
+
+/* hover triggers */
+.thecat #lefteyeball,
+.thecat #righteyeball {
+  visibility: hidden;
+}
+
+/* When hovering over the Box (h1) but NOT the cat */
+.cat-container:has(h1:hover):not(:has(.cat:hover)) .sleep-symbol {
+  visibility: hidden;
+}
+
+.cat-container:has(h1:hover):not(:has(.cat:hover)) #lefteyelid {
+  visibility: hidden;
+}
+
+.cat-container:has(h1:hover):not(:has(.cat:hover)) #lefteyeball {
+  visibility: visible;
+}
+
+/* When hovering over the Cat */
+.cat-container:has(.cat:hover) .sleep-symbol {
+  visibility: hidden;
+}
+
+.cat-container:has(.cat:hover) #lefteyelid,
+.cat-container:has(.cat:hover) #righteyelid {
+  visibility: hidden;
+}
+
+.cat-container:has(.cat:hover) #lefteyeball,
+.cat-container:has(.cat:hover) #righteyeball {
+  visibility: visible;
+}
+
+
+@keyframes sleep {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translate(-5px, -20px) scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.5);
+  }
+}
+
+/* --- SLEEPING CAT END --- */

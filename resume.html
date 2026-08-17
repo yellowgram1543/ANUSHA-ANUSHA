@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anusha Anand - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..800;1,400..800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .page-container {
+            width: 100%;
+            max-width: 210mm;
+            min-height: 297mm;
+            background: white;
+            margin: 2rem auto;
+            padding: 1.5rem 2.5rem; /* Reduced padding */
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media print {
+            @page { margin: 0; size: auto; }
+            body { 
+                background: white; 
+                margin: 0;
+                padding: 15mm; 
+            }
+            .page-container {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                width: 100%;
+                max-width: none;
+                min-height: auto;
+                page-break-inside: avoid;
+            }
+            .no-print { display: none !important; }
+        }
+
+        .timeline-line { border-left: 2px dotted #9ca3af; }
+        .timeline-circle {
+            position: absolute;
+            left: -25px; /* pl-6 is 24px + 1px border */
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border: 2px solid #9ca3af;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <!-- Back Button (Not Printed) -->
+    <div class="max-w-[210mm] mx-auto pt-6 px-4 sm:px-0 no-print flex justify-between">
+        <a href="important_files.html" style="font-family: 'DM Sans', sans-serif; letter-spacing: -0.05em;" class="inline-flex items-center gap-2 text-gray-900 hover:text-pink-600 font-bold text-[18px] transition-colors">
+            <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+            Back to Important Files
+        </a>
+        <button onclick="window.print()" style="font-family: 'DM Sans', sans-serif;" class="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg font-bold hover:bg-gray-800 transition-colors">
+            <span class="material-symbols-outlined text-[18px]">print</span>
+            Print Resume
+        </button>
+    </div>
+
+    <!-- Resume Page Container -->
+    <div class="page-container flex flex-col gap-5">
+        
+        <!-- Header Section -->
+        <header class="flex justify-between items-start mb-2">
+            <div>
+                <h1 class="text-3xl font-extrabold text-gray-900 leading-tight mb-0.5">Anusha Anand</h1>
+                <h2 class="text-lg font-bold text-gray-700">Software Developer</h2>
+            </div>
+            <div class="text-right">
+                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-widest mb-0.5">Contact</h3>
+                <p class="text-[13px] font-medium text-gray-800 mb-0">linkedin.com/in/anusha-anand-865897314</p>
+                <p class="text-[13px] font-medium text-gray-800">anushaanand1543@gmail.com</p>
+            </div>
+        </header>
+
+        <!-- Profile Section -->
+        <section>
+            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-1.5">Profile</h3>
+            <p class="text-[12.5px] leading-snug text-gray-800 font-medium text-justify">
+                CS student at BMSIT&M specializing in full-stack development and machine learning. Actively contributing to the open-source community through mentoring and technical leadership. Dedicated to building robust, high-performance, and secure digital architectures.
+            </p>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section>
+            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-3">Work Experience</h3>
+            <div class="timeline-line pl-6 ml-1.5">
+                <!-- Item 1 -->
+                <div class="relative mb-3 last:mb-0">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">GirlScript Summer of Code - Project Admin & Mentor</h4>
+                        <span class="text-[12px] font-bold text-gray-800">May 2026 - Aug 2026</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Mentored contributors and managed technical projects for India's largest open source and AI builder program.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="relative mb-0">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">OSCode BMSIT&M - Technical Associate</h4>
+                        <span class="text-[12px] font-bold text-gray-800">Oct 2025 - Present</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Contributed to technical initiatives, specialized in Python/ML, and facilitated engineering skill-building workshops.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Projects Section -->
+        <section>
+            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-3">Top Projects</h3>
+            <div class="timeline-line pl-6 ml-1.5">
+                <!-- Item 1 -->
+                <div class="relative mb-3">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">DoVER</h4>
+                        <span class="text-[11px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full uppercase tracking-wider">Blockchain & AI Forensics</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Engineered an anti-forgery platform combining Vertex AI forensics and PKI-secured digital records anchored on Polygon L2.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="relative mb-3">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">Ghewarkegeeks</h4>
+                        <span class="text-[11px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full uppercase tracking-wider">Local ML Extension</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Built a privacy-first browser extension utilizing local ONNX ML models to preemptively intercept unsafe prompts sent to LLMs.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="relative mb-3">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">JanMitra</h4>
+                        <span class="text-[11px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full uppercase tracking-wider">Full-Stack Governance</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Developed a digital portal for rural citizens enabling secure certificate applications, Aadhaar tracking, and welfare discovery.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="relative mb-3">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">LegalEase AI</h4>
+                        <span class="text-[11px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full uppercase tracking-wider">Python & NLP</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Built an AI assistant to analyze legal documents, clarify dense legal language, detect loopholes, and provide comparative analysis.</p>
+                </div>
+                <!-- Item 5 -->
+                <div class="relative mb-3">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">Trekking Management System</h4>
+                        <span class="text-[11px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full uppercase tracking-wider">Python & Chart.js</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Developed a comprehensive platform for trekking agencies featuring admin dashboards, role-based access, and secure booking workflows.</p>
+                </div>
+                <!-- Item 6 -->
+                <div class="relative mb-0">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">GigB</h4>
+                        <span class="text-[11px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full uppercase tracking-wider">React & Supabase</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Created a real-time neighborhood gig-economy application with location-based task discovery, live messaging, and secure authentication.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section>
+            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-3">Education</h3>
+            <div class="timeline-line pl-6 ml-1.5">
+                <!-- Item 1 -->
+                <div class="relative mb-3">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">B.E. Computer Science, BMS Institute of Technology</h4>
+                        <span class="text-[12px] font-bold text-gray-800">2024 - 2028</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Core focus on full-stack architecture, machine learning applications, and robust software engineering principles.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="relative mb-0">
+                    <div class="timeline-circle"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-0.5">
+                        <h4 class="text-[14px] font-bold text-gray-900">B.S. Data Science, IIT Madras</h4>
+                        <span class="text-[12px] font-bold text-gray-800">2024 - 2028</span>
+                    </div>
+                    <p class="text-[12.5px] leading-snug text-gray-800 font-medium">Specializing in advanced statistical modeling, data visualization, and Python-driven predictive analytics.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
