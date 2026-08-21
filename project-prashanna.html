@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GigB - Creative OS</title>
+<title>Prashanna AI - Creative OS</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&family=Inter:wght@400&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -15,45 +15,51 @@
 </head>
 <body data-page="project-detail" class="bg-surface text-on-surface min-h-screen flex flex-col relative font-body-md text-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
 
+<!-- Main Content Canvas -->
 <main class="flex-grow flex flex-col pt-[64px] pb-[64px] items-center px-margin-mobile md:px-margin-desktop w-full relative z-10 min-h-[calc(100vh-64px)]">
+    
+    <!-- Simple Project Data Container -->
     <div class="project-data-container hidden w-full">
         <!-- Meta Data -->
         <div id="project-meta" 
-             data-exe="GIGB.EXE" 
-             data-title="GigB" 
-             data-github="https://github.com/yellowgram1543/gigb-client" 
-             data-subtitle="Neighborhood Gig Platform" 
-             data-icon="handshake" 
-             data-number="Project 06">
+             data-exe="PRASHANNA.EXE" 
+             data-title="Prashanna AI" 
+             data-github="https://github.com/yellowgram1543/Prashanna-ai" 
+             data-subtitle="Voice-Enabled Multilingual RAG System" 
+             data-icon="mic" 
+             data-number="NEW">
         </div>
         
         <!-- Problem Content -->
         <div id="project-problem">
-            <p>Created a modern, full-stack gig-economy application connecting locals who need help with neighborhood helpers. Features location-based task discovery, real-time messaging, and secure authentication.</p>
+            <p>Developed a fully responsive, hacker-themed, Multilingual Retrieval-Augmented Generation (RAG) web application. It allows users to ask questions via voice or text, retrieves relevant context from a local FAISS vector store, and generates grounded, context-aware answers.</p>
         </div>
 
         <!-- Features Content -->
         <ul id="project-features">
-            <li>Supabase secure authentication integration</li>
-            <li>Leaflet Maps integration for geolocation & task discovery</li>
-            <li>Socket.io real-time chat rooms for communication</li>
-            <li>Complete task lifecycle management</li>
+            <li>End-to-end RAG platform processing voice and text inputs</li>
+            <li>High-speed local vector search using FAISS and sentence-transformers</li>
+            <li>Exact document context generation effectively eliminating AI hallucinations</li>
+            <li>Sarvam AI and Groq API integrations for real-time semantic translation</li>
+            <li>Native browser Text-to-Speech (TTS) supporting 4 Indic languages</li>
+            <li>Automated Markdown rendering and state-driven frontend</li>
         </ul>
 
         <!-- Tech Content -->
         <div id="project-tech">
-            <span>React</span>
-            <span>Zustand</span>
-            <span>Supabase</span>
-            <span>Leaflet</span>
-            <span>Socket.io</span>
-            <span>Node.js</span>
-            <span>Express</span>
-            <span>MongoDB</span>
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>FAISS</span>
+            <span>Sarvam AI</span>
+            <span>Groq</span>
+            <span>JavaScript</span>
+            <span>Tailwind CSS</span>
         </div>
     </div>
+
 </main>
 
+<!-- Global Functionality & Project Shell Loader -->
 <script src="assets/js/global.js"></script>
 <script src="assets/js/project-shell.js"></script>
 </body>
