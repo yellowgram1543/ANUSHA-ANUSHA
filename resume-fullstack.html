@@ -4,222 +4,354 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anusha Anand - Resume</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..800;1,400..800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: #f3f4f6;
+        /* Academic Template Styling */
+        :root {
+            --maroon: #7a0000;
         }
-        .page-container {
-            width: 100%;
+        @page { margin: 8mm; size: a4 portrait; }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            color: #000;
+            background: #fff;
+            margin: 0 auto;
             max-width: 210mm;
-            min-height: 297mm;
-            background: white;
-            margin: 2rem auto;
-            padding: 1.25rem 2rem; /* Reduced padding */
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            padding: 8mm;
+            font-size: 10pt;
+            line-height: 1.15;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
         
-        @media print {
-            @page { margin: 0; size: auto; }
-            body { 
-                background: white; 
-                margin: 0;
-                padding: 10mm; 
+        .no-print { display: none; }
+        @media screen {
+            body {
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                min-height: 297mm;
             }
-            .page-container {
-                margin: 0;
-                padding: 0;
-                box-shadow: none;
-                width: 100%;
-                max-width: none;
-                min-height: auto;
-                page-break-inside: avoid;
+            .no-print { 
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-bottom: 25px;
+                gap: 12px;
             }
-            .no-print { display: none !important; }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                padding: 8px 16px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                cursor: pointer;
+                text-decoration: none;
+                transition: all 0.2s ease;
+            }
+            .btn-outline {
+                background: white;
+                color: #4b5563;
+                border: 1px solid #e5e7eb;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            }
+            .btn-outline:hover {
+                background: #f9fafb;
+                color: #111827;
+                border-color: #d1d5db;
+            }
+            .btn-primary {
+                background: var(--maroon, #7a0000);
+                color: white;
+                border: 1px solid var(--maroon, #7a0000);
+                box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            }
+            .btn-primary:hover {
+                background: #5a0000;
+            }
         }
 
-        .timeline-line { border-left: 2px dotted #9ca3af; }
-        .timeline-circle {
+        /* Header */
+        .header-container {
+            position: relative;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .name {
+            color: var(--maroon);
+            font-size: 22pt;
+            font-variant: small-caps;
+            margin: 0 0 2px 0;
+            font-weight: normal;
+        }
+        .subtitle {
+            font-size: 10pt;
+            margin: 0;
+        }
+        .contact-info {
             position: absolute;
-            left: -25px; /* pl-6 is 24px + 1px border */
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            background-color: white;
-            border: 2px solid #9ca3af;
-            border-radius: 50%;
+            top: 2px;
+            right: 0;
+            text-align: right;
+            font-size: 9.5pt;
+            line-height: 1.3;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+            margin-bottom: 8px;
+        }
+        th, td {
+            text-align: center;
+            padding: 2px;
+        }
+        th {
+            border-bottom: 1px solid var(--maroon);
+            border-top: 1px solid var(--maroon);
+            font-weight: bold;
+            color: var(--maroon);
+        }
+        td:first-child, th:first-child { text-align: left; }
+        td:last-child, th:last-child { text-align: right; }
+        
+        /* Two Column Layout (Fixed for Print) */
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            align-items: start;
+        }
+        
+        .section-block {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 6px;
+        }
+        
+        .item-block {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 6px;
+        }
+
+        /* Sections */
+        .section-title {
+            color: var(--maroon);
+            font-variant: small-caps;
+            font-size: 12pt;
+            border-bottom: 1px solid var(--maroon);
+            margin: 0 0 4px 0;
+            padding-bottom: 2px;
+            font-weight: normal;
+        }
+        
+        /* Items */
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 2px;
+        }
+        .item-title {
+            font-weight: bold;
+            color: var(--maroon);
+        }
+        .item-date {
+            font-style: italic;
+            font-size: 9.5pt;
+        }
+        .item-subtitle {
+            font-style: italic;
+            margin-bottom: 2px;
+            font-size: 9.5pt;
+        }
+        
+        /* Lists */
+        ul {
+            margin: 2px 0 0 0;
+            padding-left: 16px;
+        }
+        li {
+            margin-bottom: 2px;
+            font-size: 9.5pt;
+            text-align: justify;
+        }
+        
+        /* Skills */
+        .skills-container {
+            font-size: 9.5pt;
+        }
+        .skills-container p {
+            margin: 2px 0;
+        }
+        .skill-category {
+            font-weight: bold;
         }
     </style>
 </head>
-<body class="text-gray-900 antialiased">
-
-    <!-- Back Button (Not Printed) -->
-    <div class="max-w-[210mm] mx-auto pt-6 px-4 sm:px-0 no-print flex justify-between">
-        <a href="important_files.html" style="font-family: 'DM Sans', sans-serif; letter-spacing: -0.05em;" class="inline-flex items-center gap-2 text-gray-900 hover:text-pink-600 font-bold text-[18px] transition-colors">
-            <span class="material-symbols-outlined text-[24px]">arrow_back</span>
-            Back to Important Files
+<body>
+    <div class="no-print">
+        <a href="important_files.html" class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to OS
         </a>
-        <button onclick="window.print()" style="font-family: 'DM Sans', sans-serif;" class="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg font-bold hover:bg-gray-800 transition-colors">
-            <span class="material-symbols-outlined text-[18px]">print</span>
+        <button onclick="window.print()" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
             Print Resume
         </button>
     </div>
 
-    <!-- Resume Page Container -->
-    <div class="page-container flex flex-col gap-3.5">
-        
-        <!-- Header Section -->
-        <header class="flex justify-between items-start mb-2">
-            <div>
-                <h1 class="text-3xl font-extrabold text-gray-900 leading-tight mb-0.5">Anusha Anand</h1>
-                <h2 class="text-lg font-bold text-gray-700">Software Developer</h2>
-            </div>
-            <div class="text-right">
-                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-widest mb-0.5">Contact</h3>
-                <p class="text-[13px] font-medium text-gray-800 mb-0">linkedin.com/in/anusha-anand-865897314</p>
-                <p class="text-[13px] font-medium text-gray-800">anushaanand1543@gmail.com</p>
-            </div>
-        </header>
-
-        <!-- Profile Section -->
-        <section>
-            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-1.5">Profile</h3>
-            <p class="text-[12.5px] leading-snug text-gray-800 font-medium text-justify">
-                CS student at BMSIT&M specializing in full-stack development and machine learning. Actively contributing to the open-source community through mentoring and technical leadership. Dedicated to building robust, high-performance, and secure digital architectures.
-            </p>
-        </section>
-
-        <!-- Technical Skills Section -->
-        <section>
-            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-2 border-b-2 border-gray-200 pb-1">Technical Skills</h3>
-            <div class="text-[12.5px] leading-snug text-gray-800 font-medium grid grid-cols-1 gap-1.5">
-                <p><span class="font-extrabold text-gray-900">Languages:</span> Python, Java, JavaScript, HTML/CSS, SQL, C, C++</p>
-                <p><span class="font-extrabold text-gray-900">Frameworks & Libraries:</span> React, Node.js, Express, Flask, FastAPI, Tailwind CSS, TensorFlow, Scikit-learn, Pandas, NumPy, Transformers.js, Socket.io</p>
-                <p><span class="font-extrabold text-gray-900">Databases:</span> FAISS, MongoDB Atlas, SQLite, Supabase, Redis, PostgreSQL, MySQL</p>
-                <p><span class="font-extrabold text-gray-900">Developer Tools:</span> Git, GitHub, Linux, VS Code, Docker, Vercel, Jupyter Notebook</p>
-                <p><span class="font-extrabold text-gray-900">Core Concepts:</span> Machine Learning, NLP, REST APIs, OOP, DSA, DBMS, Browser Extension Development</p>
-            </div>
-        </section>
-
-        <!-- Work Experience Section -->
-        <section>
-            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-2 border-b-2 border-gray-200 pb-1">Work Experience</h3>
-            <div class="flex flex-col gap-2">
-                <!-- Item 1 -->
-                <div>
-                    <div class="flex justify-between items-baseline mb-0.5">
-                        <h4 class="text-[13px] font-extrabold text-gray-900">Project Admin & Mentor <span class="text-gray-400 mx-1">|</span> <span class="text-[12px] font-medium italic text-gray-600">GirlScript Summer of Code</span></h4>
-                        <span class="text-[12px] font-bold text-gray-800">May 2026 - Aug 2026</span>
-                    </div>
-                    <ul class="list-disc pl-5 text-[11.5px] leading-snug text-gray-800 font-medium space-y-0.5">
-                        <li>Mentored contributors and managed technical projects for India's largest open source and AI builder program.</li>
-                    </ul>
-                </div>
-                <!-- Item 2 -->
-                <div>
-                    <div class="flex justify-between items-baseline mb-0.5">
-                        <h4 class="text-[13px] font-extrabold text-gray-900">Technical Associate <span class="text-gray-400 mx-1">|</span> <span class="text-[12px] font-medium italic text-gray-600">OSCode BMSIT&M</span></h4>
-                        <span class="text-[12px] font-bold text-gray-800">Oct 2025 - Present</span>
-                    </div>
-                    <ul class="list-disc pl-5 text-[11.5px] leading-snug text-gray-800 font-medium space-y-0.5">
-                        <li>Contributed to technical initiatives, specialized in Python/ML, and facilitated engineering skill-building workshops.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Top Projects Section -->
-        <section>
-            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-2 border-b-2 border-gray-200 pb-1">Projects</h3>
-            <div class="flex flex-col gap-2">
-                <!-- Item 1 (New) -->
-                <div>
-                    <div class="mb-0.5">
-                        <h4 class="text-[13px] font-extrabold text-gray-900">Prashanna AI <span class="text-gray-400 mx-1">|</span> <span class="text-[12px] font-medium italic text-gray-600">Python, FastAPI, FAISS, Tailwind CSS</span></h4>
-                    </div>
-                    <ul class="list-disc pl-5 text-[11.5px] leading-snug text-gray-800 font-medium space-y-0.5">
-                        <li>Built an end-to-end Voice-Enabled Multilingual RAG platform with local FAISS vector search to eliminate AI hallucinations.</li>
-                        <li>Integrated Groq and Sarvam AI APIs for real-time semantic translation and native browser Text-to-Speech in 4 Indic languages.</li>
-                        <li>Developed a fully responsive frontend using Tailwind CSS featuring automated Markdown rendering and strict XSS safety guardrails.</li>
-                    </ul>
-                </div>
-                <!-- Item 2 -->
-                <div>
-                    <div class="mb-0.5">
-                        <h4 class="text-[13px] font-extrabold text-gray-900">DoVER <span class="text-gray-400 mx-1">|</span> <span class="text-[12px] font-medium italic text-gray-600">Node.js, Express, MongoDB, Vertex AI, Polygon L2</span></h4>
-                    </div>
-                    <ul class="list-disc pl-5 text-[11.5px] leading-snug text-gray-800 font-medium space-y-0.5">
-                        <li>Engineered a tamper-evident anti-forgery platform combining Vertex AI forensics and PKI-secured digital records anchored on Polygon L2.</li>
-                        <li>Designed a secure backend utilizing Express, Bull Queue, and MongoDB GridFS for managing digital evidence and artifacts.</li>
-                        <li>Integrated OCR and Gemini Vision pipelines to validate semantic content of scanned documents against immutable birth records.</li>
-                        <li>Implemented robust HMAC-SHA256 APIs and a 3-tier Certificate Authority (Root, Intermediate, Issuing) for banking-grade trust.</li>
-                    </ul>
-                </div>
-                <!-- Item 3 -->
-                <div>
-                    <div class="mb-0.5">
-                        <h4 class="text-[13px] font-extrabold text-gray-900">JanMitra <span class="text-gray-400 mx-1">|</span> <span class="text-[12px] font-medium italic text-gray-600">React, Node.js, Express, MongoDB</span></h4>
-                    </div>
-                    <ul class="list-disc pl-5 text-[11.5px] leading-snug text-gray-800 font-medium space-y-0.5">
-                        <li>Designed and developed a full-stack digital governance portal to improve rural citizens' access to government services and certificates.</li>
-                        <li>Built a secure backend API using Node.js and MongoDB to handle applications, tracking via Aadhaar numbers, and issue reporting.</li>
-                        <li>Implemented an algorithmic recommendation engine matching citizens to relevant welfare schemes based on dynamically fetched demographic criteria.</li>
-                        <li>Deployed the frontend on Vercel and the backend on Render, focusing on high availability and seamless user experience.</li>
-                    </ul>
-                </div>
-                <!-- Item 4 -->
-                <div>
-                    <div class="mb-0.5">
-                        <h4 class="text-[13px] font-extrabold text-gray-900">Trekking Management System <span class="text-gray-400 mx-1">|</span> <span class="text-[12px] font-medium italic text-gray-600">Python, SQLite, SQLAlchemy, Chart.js</span></h4>
-                    </div>
-                    <ul class="list-disc pl-5 text-[11.5px] leading-snug text-gray-800 font-medium space-y-0.5">
-                        <li>Developed a centralized web-based platform for trekking agencies to streamline package management, staff assignment, and secure online bookings.</li>
-                        <li>Built dynamic administrative dashboards utilizing Chart.js to visualize trek popularity based on booking counts and overall statistics.</li>
-                        <li>Implemented role-based access workflows for Admins, Staff, and Users, with secure forms capturing emergency and medical conditions.</li>
-                        <li>Engineered the backend using SQLite and SQLAlchemy ORM with normalized tables for complex trek and booking relations.</li>
-                    </ul>
-                </div>
-        </section>
-
-        <!-- Education Section -->
-        <section>
-            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-2 border-b-2 border-gray-200 pb-1">Education</h3>
-            <div class="flex flex-col gap-2">
-                <!-- Item 1 -->
-                <div>
-                    <div class="flex justify-between items-baseline mb-0.5">
-                        <h4 class="text-[13px] font-extrabold text-gray-900">B.E. Computer Science <span class="text-gray-400 mx-1">|</span> <span class="text-[12px] font-medium italic text-gray-600">BMS Institute of Technology</span></h4>
-                        <span class="text-[12px] font-bold text-gray-800">2024 - 2028</span>
-                    </div>
-                    <ul class="list-disc pl-5 text-[11.5px] leading-snug text-gray-800 font-medium space-y-0.5">
-                        <li>Core focus on full-stack architecture, machine learning applications, and robust software engineering principles.</li>
-                    </ul>
-                </div>
-                <!-- Item 2 -->
-                <div>
-                    <div class="flex justify-between items-baseline mb-0.5">
-                        <h4 class="text-[13px] font-extrabold text-gray-900">B.S. Data Science <span class="text-gray-400 mx-1">|</span> <span class="text-[12px] font-medium italic text-gray-600">IIT Madras</span></h4>
-                        <span class="text-[12px] font-bold text-gray-800">2024 - 2028</span>
-                    </div>
-                    <ul class="list-disc pl-5 text-[11.5px] leading-snug text-gray-800 font-medium space-y-0.5">
-                        <li>Specializing in advanced statistical modeling, data visualization, and Python-driven predictive analytics.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section>
-            <h3 class="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-2 border-b-2 border-gray-200 pb-1">Achievements</h3>
-            <ul class="list-disc pl-5 text-[12.5px] leading-snug text-gray-800 font-medium mb-0">
-                <li class="pl-1">Finalist, Samsung ANVESHANA Solve for Tomorrow National Ideathon.</li>
-            </ul>
-        </section>
-
+    <!-- Header -->
+    <div class="header-container">
+        <h1 class="name">Anusha Anand</h1>
+        <p class="subtitle">Software Developer</p>
+        <div class="contact-info">
+            linkedin.com/in/anusha-anand-865897314<br>
+            anushaanand1543@gmail.com
+        </div>
     </div>
 
+    <!-- Education -->
+    <h2 class="section-title">Education</h2>
+    <table>
+        <tr>
+            <th>Year</th>
+            <th>Degree</th>
+            <th>Institute</th>
+        </tr>
+        <tr>
+            <td>2024 - 2028</td>
+            <td>B.E. Computer Science</td>
+            <td>BMS Institute of Technology</td>
+        </tr>
+        <tr>
+            <td>2024 - 2028</td>
+            <td>B.S. Data Science</td>
+            <td>Indian Institute of Technology Madras</td>
+        </tr>
+    </table>
+
+    <div class="two-column-layout">
+
+        <div class="left-column">
+            <!-- Profile -->
+        <div class="section-block">
+            <h2 class="section-title">Profile</h2>
+            <p style="margin: 4px 0; font-size: 9.5pt; text-align: justify;">
+                CS student at BMSIT&M specializing in full-stack development and machine learning. Actively contributing to the open-source community through mentoring and technical leadership. Dedicated to building robust, high-performance, and secure digital architectures.
+            </p>
+        </div>
+
+        
+            <!-- Skills -->
+        <div class="section-block">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <p><span class="skill-category">Languages:</span> Python, Java, JavaScript, HTML/CSS, SQL, C, C++</p>
+                <p><span class="skill-category">Frameworks:</span> React, Node.js, Express, Flask, FastAPI, Tailwind, TensorFlow, Scikit-learn, Pandas, NumPy</p>
+                <p><span class="skill-category">Databases:</span> FAISS, MongoDB, SQLite, Supabase, Redis, PostgreSQL, MySQL</p>
+                <p><span class="skill-category">Tools:</span> Git, Linux, Docker, Vercel</p>
+            </div>
+        </div>
+
+        
+            <!-- Work Experience -->
+        <div class="section-block">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">Project Admin & Mentor</div>
+                    <div class="item-date">May 2026 - Aug 2026</div>
+                </div>
+                <div class="item-subtitle">GirlScript Summer of Code</div>
+                <ul>
+                    <li>Mentored contributors and managed technical projects for India's largest open source and AI builder program.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <div class="item-title">Technical Associate</div>
+                    <div class="item-date">Oct 2025 - Present</div>
+                </div>
+                <div class="item-subtitle">OSCode BMSIT&M</div>
+                <ul>
+                    <li>Contributed to technical initiatives, specialized in Python/ML, and facilitated engineering skill-building workshops.</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+            <!-- Projects -->
+        <div class="section-block" style="margin-bottom: 0;">
+            <h2 class="section-title">Projects</h2>
+        </div>
+            <div class="item-block">
+            <div class="item-header">
+                <div class="item-title">Prashanna AI</div>
+            </div>
+            <div class="item-subtitle">Python, FastAPI, FAISS, Tailwind CSS</div>
+            <ul>
+                <li>Engineered a <strong>memory-safe data pipeline</strong> using <strong>PyArrow batch streaming</strong> with column-selective parquet reads to process a <strong>3.7GB shard</strong> without loading unused multilingual columns, extracting and cleaning <strong>50,000 QA rows</strong>; ran EDA to identify a <strong>bimodal passage-length distribution</strong> that directly informed chunking strategy.</li>
+                <li><strong>Benchmarked 5 chunking and retrieval strategies</strong> (fixed-size, overlap, semantic, dense, sparse, RRF-fused) against <strong>recall@5 and latency</strong>, selecting overlap chunking + dense-only retrieval (<strong>FAISS + MiniLM</strong>) based on measured trade-offs — achieving <strong>0.990 recall@5 at P50 22ms</strong>, well within the 200ms target.</li>
+                <li>Built a <strong>multilingual voice pipeline</strong> (<strong>Sarvam STT</strong> + translation) supporting English, Hindi, and Tamil, wired into a <strong>FastAPI backend</strong> with per-stage latency instrumentation, retry-based error handling, and structured I/O across STT, retrieval, and generation stages.</li>
+                <li>Implemented <strong>conversational memory via query-rewriting</strong> (using dialogue history to resolve follow-up questions into standalone retrievable queries) and <strong>grounding/off-topic guardrails</strong> to prevent hallucinated or out-of-scope answers, validated across a <strong>40-query test suite</strong> spanning in-domain, off-topic, and multilingual cases.</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="right-column">
+            <div class="item-block">
+            <div class="item-header">
+                <div class="item-title">DoVER</div>
+            </div>
+            <div class="item-subtitle">Node.js, Express, MongoDB, Vertex AI, Polygon L2</div>
+            <ul>
+                <li>Engineered a <strong>tamper-evident anti-forgery platform</strong> combining <strong>Vertex AI forensics</strong> and PKI-secured digital records anchored on <strong>Polygon L2</strong>.</li>
+                <li>Designed a <strong>secure backend</strong> utilizing <strong>Express, Bull Queue, and MongoDB GridFS</strong> for managing digital evidence and artifacts.</li>
+                <li>Integrated <strong>OCR and Gemini Vision pipelines</strong> to validate semantic content of scanned documents against immutable birth records.</li>
+                <li>Implemented <strong>robust HMAC-SHA256 APIs</strong> and a <strong>3-tier Certificate Authority</strong> (Root, Intermediate, Issuing) for banking-grade trust.</li>
+            </ul>
+        </div>
+            <div class="item-block">
+            <div class="item-header">
+                <div class="item-title">JanMitra</div>
+            </div>
+            <div class="item-subtitle">React, Node.js, Express, MongoDB</div>
+            <ul>
+                <li>Designed and developed a <strong>full-stack digital governance portal</strong> to improve rural citizens' access to government services and certificates.</li>
+                <li>Built a <strong>secure backend API</strong> using <strong>Node.js and MongoDB</strong> to handle applications, tracking via Aadhaar numbers, and issue reporting.</li>
+                <li>Implemented an <strong>algorithmic recommendation engine</strong> matching citizens to relevant welfare schemes based on dynamically fetched demographic criteria.</li>
+                <li>Deployed the frontend on <strong>Vercel</strong> and the backend on <strong>Render</strong>, focusing on <strong>high availability</strong> and seamless user experience.</li>
+            </ul>
+        </div>
+            <div class="item-block">
+            <div class="item-header">
+                <div class="item-title">Trekking Management System</div>
+            </div>
+            <div class="item-subtitle">Python, SQLite, SQLAlchemy, Chart.js</div>
+            <ul>
+                <li>Developed a <strong>centralized web-based platform</strong> for trekking agencies to streamline package management, staff assignment, and secure online bookings.</li>
+                <li>Built dynamic administrative dashboards utilizing <strong>Chart.js</strong> to visualize trek popularity based on booking counts and overall statistics.</li>
+                <li>Implemented <strong>role-based access workflows</strong> for Admins, Staff, and Users, with secure forms capturing emergency and medical conditions.</li>
+                <li>Engineered the backend using <strong>SQLite and SQLAlchemy ORM</strong> with normalized tables for complex trek and booking relations.</li>
+            </ul>
+        </div>
+            <!-- Achievements -->
+        <div class="section-block">
+            <h2 class="section-title">Achievements</h2>
+            <ul>
+                <li>Finalist, Samsung ANVESHANA Solve for Tomorrow National Ideathon.</li>
+            </ul>
+        </div>
+
+        
+        </div>
+</div> <!-- End of two-column layout -->
 </body>
 </html>

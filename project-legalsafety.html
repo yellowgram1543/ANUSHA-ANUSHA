@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>LegalEase AI - Creative OS</title>
+<title>Legal Safety Engine - Creative OS</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&family=Inter:wght@400&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -19,33 +19,34 @@
     <div class="project-data-container hidden w-full">
         <!-- Meta Data -->
         <div id="project-meta" 
-             data-exe="LEGALEASE.EXE" 
-             data-title="LegalEase AI" 
-             data-github="https://github.com/yellowgram1543/LegalEase-AI" 
-             data-subtitle="Intelligent Assistant for Understanding Legal Documents" 
+             data-exe="LEGAL_SAFETY.EXE" 
+             data-title="Legal Safety Engine" 
+             data-github="https://github.com/yellowgram1543/legal-safety-engine" 
+             data-subtitle="Deterministic NLI Verification" 
              data-icon="gavel" 
              data-number="Project 03">
         </div>
         
-        <!-- Problem Content -->
+                <!-- Problem Content -->
         <div id="project-problem">
-            <p>Built an AI-powered assistant designed to help everyday users understand and analyze legal documents with clarity and confidence. Clarifies dense legal language in agreements, service terms, and rental documents using modern AI and NLP.</p>
+            <p>Commercial legal contracts require a high degree of precision, yet traditional RAG pipelines often suffer from structural loss (chunking boundaries breaking clauses) and silent hallucination. A zero-recompute, structure-aware RAG pipeline and NLI-grounded hallucination verification gate was required.</p>
         </div>
 
-        <!-- Features Content -->
+                                <!-- Features Content -->
         <ul id="project-features">
-            <li>Single-Document Analysis</li>
-            <li>Pros &amp; Cons Breakdown</li>
-            <li>Risk &amp; Loophole Detection</li>
-            <li>Clause Explanations &amp; Q&amp;A</li>
-            <li>Comparative Analysis Mode</li>
+            <li><strong>Structure-Aware Parsing:</strong> Hierarchical clause-boundary parsing that preserves semantics and character offsets.</li>
+            <li><strong>Zero-Recompute RAG:</strong> In-memory FAISS indexing with BGE-small embeddings for sub-millisecond search.</li>
+            <li><strong>Local Gen-AI Synthesis:</strong> Runs Qwen2.5-0.5B entirely on CPU, completely independent of external APIs.</li>
+            <li><strong>NLI Verification Gate:</strong> DeBERTa-v3 cross-encoder validates generated claims to proactively block hallucinations.</li>
         </ul>
 
-        <!-- Tech Content -->
+                <!-- Tech Content -->
         <div id="project-tech">
             <span>Python</span>
-            <span>NLP</span>
-            <span>Flask</span>
+            <span>FastAPI</span>
+            <span>FAISS</span>
+            <span>Local LLMs</span>
+            <span>DeBERTa NLI</span>
         </div>
     </div>
 </main>
